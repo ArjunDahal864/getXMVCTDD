@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:foody/controller/login_controller.dart';
 import 'package:foody/utils/colors.dart';
 import 'package:foody/views/auth/auth_pages.dart';
 import 'package:foody/views/auth/signup_page.dart';
+import 'package:foody/views/home/home_page.dart';
 import 'package:foody/widgets/widgets.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
+  final LoginController controller = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,11 +64,13 @@ class LoginPage extends StatelessWidget {
                               children: [
                                 TextInputField(
                                   inputHint: "+9779840....",
+                                  inputType: TextInputType.number,
                                   isSecured: false,
                                 ),
                                 SizedBox(height: 20),
                                 TextInputField(
                                   inputHint: "*******",
+                                  inputType: TextInputType.text,
                                   isSecured: true,
                                 ),
                               ],
@@ -78,7 +83,7 @@ class LoginPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               InkWell(
-                                onTap: (){
+                                onTap: () {
                                   Get.to(ForgotPasswordPage());
                                 },
                                 child: Text(
@@ -123,7 +128,10 @@ class LoginPage extends StatelessWidget {
                         Icons.arrow_forward,
                         size: 40,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        // controller.refresh();
+                        Get.to(HomePage());
+                      },
                     ),
                   ),
                 ),

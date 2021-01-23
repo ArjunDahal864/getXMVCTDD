@@ -4,8 +4,9 @@ import 'package:foody/utils/colors.dart';
 class TextInputField extends StatelessWidget {
   final String inputHint;
   final bool isSecured;
+  final TextInputType inputType;
 
-  const TextInputField({Key key, @required this.inputHint, @required this.isSecured})
+  const TextInputField({Key key, @required this.inputHint, @required this.isSecured, this.inputType})
       : super(key: key);
 
   @override
@@ -14,9 +15,12 @@ class TextInputField extends StatelessWidget {
       children: [
         Expanded(
           child: TextFormField(
+             
+            keyboardType: inputType,
             decoration: InputDecoration(
               hintText: inputHint,
               isDense: true,
+              
               suffixIcon: isSecured ? Icon(Icons.visibility) : null,
               focusColor: AppColor.primaryWhite,
               border: UnderlineInputBorder(borderSide: BorderSide(color: AppColor.primaryBlack,)),

@@ -60,22 +60,29 @@ class SignUp extends StatelessWidget {
                               children: [
                                 TextInputField(
                                   inputHint: "John Doe",
+                                  inputType: TextInputType.text,
+
                                   isSecured: false,
                                 ),
                                 SizedBox(height: 20),
                                 TextInputField(
                                   inputHint: "+9779840....",
+                                  inputType: TextInputType.number,
+
 
                                   isSecured: false,
                                 ),
                                 SizedBox(height: 20),
                                 TextInputField(
                                   inputHint: "johndoe@gmail.com",
+                                  inputType: TextInputType.emailAddress,
+
                                   isSecured: false,
                                 ),
                                 SizedBox(height: 20),
                                 TextInputField(
                                   inputHint: "*******",
+                                  inputType: TextInputType.text,
                                   isSecured: true,
                                 ),
                               ],
